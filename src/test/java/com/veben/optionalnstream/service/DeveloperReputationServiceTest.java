@@ -18,8 +18,8 @@ class DeveloperReputationServiceTest extends AbstractServiceTest {
     @Nested
     class should_get_nickname_with_one_high_dev {
 
-        public static final String HIGH_DEV_NICKNAME = "high_dev_nickname";
-        public static final int HIGH_REPUTATION = 999999999;
+        private static final String HIGH_DEV_NICKNAME = "high_dev_nickname";
+        private static final int HIGH_REPUTATION = 999999999;
 
         @Test
         void should_get_nickname_with_older_way() {
@@ -67,7 +67,7 @@ class DeveloperReputationServiceTest extends AbstractServiceTest {
         }
 
         @Test
-        void should_get_nickname_with_bad_way() {
+        void should_get_nickname_with_dirty_way() {
             // given
             final var givenDevList = List.of(Developer.builder()
                     .nickname(HIGH_DEV_NICKNAME)
@@ -75,7 +75,7 @@ class DeveloperReputationServiceTest extends AbstractServiceTest {
                     .build());
 
             // when
-            final String result = developerReputationService.getFirstHighReputationDeveloperNameBadWay(givenDevList);
+            final String result = developerReputationService.getFirstHighReputationDeveloperNameDirtyWay(givenDevList);
 
             // then
             assertThat(result).isEqualTo(HIGH_DEV_NICKNAME);
@@ -85,8 +85,8 @@ class DeveloperReputationServiceTest extends AbstractServiceTest {
     @Nested
     class should_get_nickname_with_one_low_dev {
 
-        public static final String LOW_DEV_NICKNAME = "low_dev_nickname";
-        public static final int LOW_REPUTATION = 15;
+        private static final String LOW_DEV_NICKNAME = "low_dev_nickname";
+        private static final int LOW_REPUTATION = 15;
 
         @Test
         void should_get_nickname_with_older_way() {
@@ -134,7 +134,7 @@ class DeveloperReputationServiceTest extends AbstractServiceTest {
         }
 
         @Test
-        void should_get_nickname_with_bad_way() {
+        void should_get_nickname_with_dirty_way() {
             // given
             final var givenDevList = List.of(Developer.builder()
                     .nickname(LOW_DEV_NICKNAME)
@@ -142,7 +142,7 @@ class DeveloperReputationServiceTest extends AbstractServiceTest {
                     .build());
 
             // when
-            final String result = developerReputationService.getFirstHighReputationDeveloperNameBadWay(givenDevList);
+            final String result = developerReputationService.getFirstHighReputationDeveloperNameDirtyWay(givenDevList);
 
             // then
             assertThat(result).isEqualTo(NO_PLAYER_NICKNAME);

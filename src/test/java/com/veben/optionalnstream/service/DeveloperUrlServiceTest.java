@@ -15,7 +15,7 @@ class DeveloperUrlServiceTest extends AbstractServiceTest {
 
     @Nested
     class should_get_website_url {
-        public static final String EXPECTED_URL = "mywebsite.com";
+        private static final String EXPECTED_URL = "mywebsite.com";
 
         @Test
         void should_get_url_with_old_way() {
@@ -73,7 +73,7 @@ class DeveloperUrlServiceTest extends AbstractServiceTest {
     @Nested
     class should_get_stackoverflow_url {
 
-        public static final String EXPECTED_URL = "stackoverflow.com/profil";
+        private static final String EXPECTED_URL = "stackoverflow.com/profil";
 
         @Test
         void should_get_url_with_old_way() {
@@ -131,7 +131,7 @@ class DeveloperUrlServiceTest extends AbstractServiceTest {
     @Nested
     class should_get_github_url {
 
-        public static final String EXPECTED_URL = "github.com/profil";
+        private static final String EXPECTED_URL = "github.com/profil";
 
         @Test
         void should_get_url_with_old_way() {

@@ -41,8 +41,8 @@ public class DeveloperReputationService {
                 .map(Developer::getNickname)
                 .orElse(NO_PLAYER_NICKNAME);
     }
-    // Java 8+: Bad way to use Optional
-    public String getFirstHighReputationDeveloperNameBadWay(List<Developer> developers) {
+    // Java 8+: Dirty way to use Optional
+    public String getFirstHighReputationDeveloperNameDirtyWay(List<Developer> developers) {
         final Optional<Developer> firstHighReputationDeveloper = developers.stream()
                 .filter(user -> user.getReputation() > HIGH_REP_SCORE)
                 .findFirst();

@@ -5,8 +5,11 @@ import lombok.Getter;
 @Getter
 public class DefaultAvatar extends Avatar {
 
+    public static final String DEFAULT_URL = "defaultUrl";
+    public static final String DEFAULT_WORDING = "defaultWording";
+
     public DefaultAvatar() {
-        this.gravatarUrl = "defaultUrl";
-        this.wording = "defaultWording";
+        this.gravatarUrl = DEFAULT_URL;
+        this.wording = DEFAULT_WORDING;
     }
 }

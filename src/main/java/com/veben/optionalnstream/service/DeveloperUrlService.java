@@ -31,7 +31,7 @@ public class DeveloperUrlService {
         return url;
     }
 
-    // Before Java 8 : triple ternary operator
+    // Before Java 8 : dirty triple ternary operator
     String getDeveloperUrlOldAnotherWay(Developer developer) {
         return developer.getWebsiteUrl() != null
                 ? developer.getWebsiteUrl()
