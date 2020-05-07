@@ -16,14 +16,11 @@ public class DeveloperAvatarService {
     }
     // Java 8+: Good way to use Optional
     public Avatar getAvatar(Developer developer) {
-        return Optional.ofNullable(developer)
-                .map(Developer::getAvatar)
-                .orElse(new DefaultAvatar());
+        return Optional.ofNullable(developer).map(Developer::getAvatar).orElse(new DefaultAvatar());
     }
     // Java 8+: Dirty way to use Optional
     public Avatar getAvatarDirtyWay(Developer developer) {
         Optional<Developer> maybeDeveloper = Optional.ofNullable(developer);
-
         return maybeDeveloper.isPresent() ? maybeDeveloper.get().getAvatar() : new DefaultAvatar();
     }
 }
